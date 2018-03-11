@@ -7,3 +7,19 @@
 //
 
 #include <stdio.h>
+
+int main(){
+    char ch;
+    int num[10] = {0};
+    
+    while((ch = getchar()) != EOF){
+        if(ch >= '0' && ch <= '9'){
+            num[ch-'0'] ++;
+        }
+    }
+    
+    for(int i=0; i<10; i++){
+        printf("%d: %d\n", i, num[i]);
+    }
+    return 0;
+}
