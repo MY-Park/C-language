@@ -9,7 +9,7 @@
 #include <stdio.h>
 
 int main(){
-
+    
     int arr[94] = {0};
     char ch;
     int max_val = 0;
