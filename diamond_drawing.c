@@ -14,6 +14,7 @@ int main(){
     
     scanf("%d",&H);
     l = r = (H / 2) + 1;
+    
     for(int i=0; i<(H / 2) + 1; i++){
         for(j=0; j<l-1; j++){
             putchar(' ');
@@ -26,14 +27,20 @@ int main(){
         r++;
         putchar('\n');
     }
-    r--;
-    l++;
+    l = l + 2;
+    r = r - 2;
     
-    for(int i=0; i<(H/2); i++){
-        for(j=0; j<l-1; j++) putchar(' ');
-        for(;j<r; j++) putchar('*');
+    for(int i=0; i<(H / 2); i++){
+        for(j=0; j<l-1; j++){
+            putchar(' ');
+        }
+        for(; j<r; j++){
+            putchar('*');
+        }
+        
         l++;
         r--;
+        putchar('\n');
     }
     return 0;
 }
