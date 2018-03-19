@@ -13,6 +13,10 @@ int main(){
     int cnt = 0;
     int quo = 0;
     int mul = 0;
+    int tab_size;
+    
+    scanf("%d", &tab_size);
+    printf("%d",tab_size);
     
     while((ch=getchar())!=EOF){
         if(ch == '\n'){
@@ -25,8 +29,8 @@ int main(){
             cnt++;
             putchar(ch);
         }else{
-            quo = cnt / 4;
-            mul = (quo + 1) * 4;
+            quo = cnt / tab_size;
+            mul = (quo + 1) * tab_size;
             for(; cnt < mul; cnt++){
                 putchar(' ');
             }
