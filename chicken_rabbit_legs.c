@@ -1,50 +1,42 @@
 //
-//  chicken_rabbit_legs.c
+//  candy_divide.c
 //  Test01
 //
-//  Created by 박민영 on 28/03/2018.
+//  Created by 박민영 on 29/03/2018.
 //  Copyright © 2018 박민영. All rights reserved.
 //
 
 #include <stdio.h>
 
 int main(){
-    int min, max, N, legs, a, b;
+    int N;
+    int candy[200];
+    int SAME = 0;
     
-    scanf("%d",&N);
-    
-    for(int i=0; i<N; i++){
-        scanf("%d",&legs);
-        b = 0;
-        a = -1;
-        min = max = 0;
+    while(1){
+        scanf("%d",&N);
+        if(N == 0) return 0;
         
-        while((legs- 4 * b) / 2 >= 0){
-            if(1.0 * (legs- 4 * b) / 2 == (legs- 4 * b) / 2){
-                a = (legs- 4 * b) / 2;
-                break;
-            }else b++;
+        
+        for(int i=0; i<N; i++){
+            scanf("%d",&candy[i]);
         }
-        if(a == -1) {
-            printf("0 0\n");
-            continue;
+        while(1){
+            for(int i=0; i<N; i++){
+                candy[i] /= 2;
+            }
+            
+            for(int i=0; i<N-1; i++){
+                candy[i+1] += candy[i];
+                if(candy[i+1] % 2 == 1) candy[i+1]++;
+                
+                if(i!=0){
+                    if(candy[i])
+                }
+            }
+            candy[0] += candy[N-1];
+            if(candy[0] % 2 == 1) candy[0]++;
         }
-        
-        max = a + b;
-        
-        a = 0;
-        b = -1;
-        while((legs - 2 * a) / 4 >= 0){
-            if(1.0 * (legs - 2 * a) / 4 == (legs - 2 * a) / 4){
-                b = (legs - 2 * a) / 4;
-                break;
-            }else a++;
-        }
-        
-        min = a + b;
-        
-        printf("%d %d\n", min, max);
-        
     }
     
     return 0;
